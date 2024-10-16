@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event in Javascript</title>
+</head>
+<body>
+    <h1><b>Events in Javascript</b></h1>
+    <p id = "para">
+    <button id = "btn">Click Me!</button>
+    <br>
+    </p>
+    <p>
+        Name: <input type = "text" placeholder = "Input your name" id = "name">
+        <p id = "input-message"></p>
+    </p>
+    
+    <p><label for="color">Select a Color:</label>
+        <select id="color">
+        <option >Red</option>
+        <option >Yellow</option>
+        <option >Blue</option>
+        </select>
+        <p id = "color-selected"></p>
+    </p>
+    <p>
+        Type Something: <input type  = "text" id = "typeinput">
+        <p id = "typed-message"></p>
+    </p>
+    
+    <script>
+            document.getElementById("btn").onclick  = function(){
+                document.getElementById("para").innerHTML = "<b>Button Clicked</b>";
+            };
+
+            document.getElementById("name").onblur  = function(){
+                document.getElementById("input-message").innerHTML = "<b>Input field lost focus!</b>";
+            };
+
+            document.getElementById("color").onchange  = function(){
+                var selectedcolor = document.getElementById("color").value;
+                document.getElementById("color-selected").innerHTML = "You selected "+selectedcolor;
+            };
+
+            document.getElementById("typeinput").oninput  = function(){
+                var selectedmessage = document.getElementById("typeinput").value;
+                document.getElementById("typed-message").innerHTML = "You typed "+selectedmessage;
+            };
+
+    </script>
+
+    
+</body>
+</html>
